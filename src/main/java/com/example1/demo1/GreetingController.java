@@ -14,4 +14,9 @@ public class GreetingController {
 		return "greeting";
 	}
 
+	@GetMapping("/goodbye")
+	public String goodbye(@RequestParam(name="name1", required=false, defaultValue="World") String namePerson, Model model) {
+		model.addAttribute("name2", namePerson);
+		return "goodbye";
+	}
 }
